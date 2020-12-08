@@ -42,10 +42,11 @@ jobs:
         cd build
         CC=gcc-10 CXX=g++-10 cmake ..
         make -j 4
+        ls -alh .
 
     - uses: actions/upload-artifact@v2
+      name: Upload-binary
       with:
-        name: upload-binanry
+        name: ubuntu-release
         path: |
-          cmake-build-release/
-          build-linux/
+          build/
